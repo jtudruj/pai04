@@ -16,6 +16,11 @@ h1 {
     color: #D20005;
 }
 
+h3 {
+    color: white;
+    align-self: center;
+}
+
 a:link, a:visited {
   color: #045491;
   font-weight : bold;
@@ -26,4 +31,8 @@ a:link:hover, a:visited:hover  {
   color: #045491;
   font-weight : bold;
   text-decoration : underline;
+}
+
+.przycisk {
+    width: 100%;
 }
