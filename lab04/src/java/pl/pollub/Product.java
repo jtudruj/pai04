@@ -1,4 +1,4 @@
-package pl.pollub.entities;
+package pl.pollub;
 // Generated Jan 15, 2017 8:34:10 AM by Hibernate Tools 4.3.1
 
 

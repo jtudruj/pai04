@@ -5,8 +5,12 @@
  */
 package pl.pollub;
 
+import javax.imageio.spi.ServiceRegistry;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
 
 /**
  * Hibernate Utility class with a convenient method to get Session Factory
@@ -17,6 +21,7 @@ import org.hibernate.SessionFactory;
 public class HibernateUtil {
 
     private static final SessionFactory sessionFactory;
+    private static ServiceRegistry serviceRegistry;
     
     static {
         try {
@@ -31,6 +36,12 @@ public class HibernateUtil {
     }
     
     public static SessionFactory getSessionFactory() {
+        Configuration configuration = new Configuration();
+        configuration.configure();
+        serviceRegistry = (ServiceRegistry) new StandardServiceRegistryBuilder()
+                                                .applySettings(configuration
+                                                                .getProperties())
+                                                .build();
         return sessionFactory;
     }
 }
