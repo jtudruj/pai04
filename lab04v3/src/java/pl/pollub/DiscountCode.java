@@ -1,5 +1,5 @@
 package pl.pollub;
-// Generated Jan 15, 2017 8:34:10 AM by Hibernate Tools 4.3.1
+// Generated Jan 15, 2017 3:14:06 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;

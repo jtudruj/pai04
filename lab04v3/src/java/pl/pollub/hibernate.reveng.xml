@@ -41,11 +41,7 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-schema="APP"/>
-  <table-filter match-name="DISCOUNT_CODE"/>
-  <table-filter match-name="PURCHASE_ORDER"/>
-  <table-filter match-name="PRODUCT_CODE"/>
-  <table-filter match-name="PRODUCT"/>
-  <table-filter match-name="MANUFACTURER"/>
   <table-filter match-name="CUSTOMER"/>
+  <table-filter match-name="DISCOUNT_CODE"/>
   <table-filter match-name="MICRO_MARKET"/>
 </hibernate-reverse-engineering>
