@@ -46,12 +46,12 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:derby://localhost:1527/sample</property>
     <property name="hibernate.connection.username">app</property>
     <property name="hibernate.connection.password">app</property>
-    <mapping resource="pl/pollub/Customer.hbm.xml"/>
-    <mapping resource="pl/pollub/ProductCode.hbm.xml"/>
-    <mapping resource="pl/pollub/DiscountCode.hbm.xml"/>
-    <mapping resource="pl/pollub/PurchaseOrder.hbm.xml"/>
-    <mapping resource="pl/pollub/Manufacturer.hbm.xml"/>
-    <mapping resource="pl/pollub/Product.hbm.xml"/>
-    <mapping resource="pl/pollub/MicroMarket.hbm.xml"/>
+    <mapping resource="pl/pollub/entities/Customer.hbm.xml"/>
+    <mapping resource="pl/pollub/entities/ProductCode.hbm.xml"/>
+    <mapping resource="pl/pollub/entities/DiscountCode.hbm.xml"/>
+    <mapping resource="pl/pollub/entities/PurchaseOrder.hbm.xml"/>
+    <mapping resource="pl/pollub/entities/Manufacturer.hbm.xml"/>
+    <mapping resource="pl/pollub/entities/Product.hbm.xml"/>
+    <mapping resource="pl/pollub/entities/MicroMarket.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
