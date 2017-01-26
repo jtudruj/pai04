@@ -10,21 +10,24 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
     
         
-        <% try {
-            List<Customer> list = Customers.getCustomers();
+        <%
+            try {
+                List<Customer> list = Customers.getCustomers();
+                pageContext.setAttribute("list", list);
             } catch(Exception e) {
-                out.print("Blad pobierania listy uzytkownikow: " + e);
-            } 
-         %>
-        
+                out.print(e);
+            }
+        %>
+         
         <table border="1">
             <tr>
                 <th>ID</th>
@@ -35,10 +38,10 @@
                 <th>details</th>
                 
             </tr>
-            <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+            
             <c:forEach items="${list}" var="element">
                 <tr>      
-                    <td>${element.customer_id}</td>
+                    <td><c:out value="${element.customerId}"/></td>
                     <td>${element.name}</td>
                     <td>${element.phone}</td>
                     <td>${element.email}</td>
@@ -52,4 +55,4 @@
             
         
     
-</html>
+
