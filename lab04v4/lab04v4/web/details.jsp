@@ -19,6 +19,7 @@
         <%! Customer customer; %>
         <% 
             customer = Customers.getCustomer(Integer.parseInt(request.getParameter("index"))); 
+
         %>
         
         

@@ -47,7 +47,7 @@
                     <td>${element.phone}</td>
                     <td>${element.email}</td>
                     <td>${element.city}</td>
-                    <td><a href="details.jsp?index=${list.indexOf(element)}">Details</a></td> 
+                    <td><a href="details.jsp?index=${element.customerId}">Details</a></td> 
                 </tr>
             </c:forEach>
         </table>

@@ -27,7 +27,7 @@ public class Customers {
         return customers;
     }
     
-    public static Customer getCustomer(long id) {
+    public static Customer getCustomer(int id) {
         Session session = getSession();
         Customer customer = (Customer)session.get(Customer.class, id);
         return customer;
@@ -35,7 +35,9 @@ public class Customers {
     
     public static void insertCustomer(Customer c) {
         Session session = getSession();
+        session.beginTransaction();
         session.save(c);
+        session.getTransaction().commit();
         session.close();
     }
 }
