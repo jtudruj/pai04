@@ -22,6 +22,7 @@
         <%
             try {
                 List<Customer> list = Customers.getCustomers();
+                pageContext.setAttribute("list", list);
             } catch(Exception e) {
                 out.print("Error!!!!");
                 out.print(e);
@@ -41,7 +42,7 @@
             
             <c:forEach items="${list}" var="element">
                 <tr>      
-                    <td><c:out value="${element.customerId}"/></td>
+                    <td>${element.customerId}</td>
                     <td>${element.name}</td>
                     <td>${element.phone}</td>
                     <td>${element.email}</td>

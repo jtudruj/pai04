@@ -59,10 +59,10 @@ public class AddCustomer extends HttpServlet {
                 Customers.insertCustomer(customer);
                 
                 out.println("<h1>Dodano rekord!</h1>");
-                out.println("<a href=\"http://localhost:8080/lab03/\">Wroc do listy</a>");
+                out.println("<a href=\"http://localhost:8080/lab04v4/index.jsp\">Wroc do listy</a>");
             } catch (Exception e) {
-               out.println("<h1>Connection error</h1>");
-               out.println(e);
+               out.println("<h1>Invalid data!</h1>");
+               out.println("Error message: " + e);
             }             
             out.println("</body>");
             out.println("</html>");
