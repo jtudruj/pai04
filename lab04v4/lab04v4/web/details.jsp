@@ -4,6 +4,7 @@
     Author     : student
 --%>
 
+<%@page import="pl.pollub.Customer"%>
 <%@page import="pl.pollub.Customers"%>
 <%@page import="java.sql.Array"%>
 <%@page import="java.util.ArrayList"%>
@@ -15,7 +16,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-        <%! CustomerBean customer; %>
+        <%! Customer customer; %>
         <% 
             customer = Customers.getCustomer(Integer.parseInt(request.getParameter("index"))); 
         %>
@@ -26,11 +27,11 @@
             
                 <tr>
                     <td>ID</td>
-                    <td><%=customer.getCustomer_id()%></td>
+                    <td><%=customer.getCustomerId()%></td>
                 </tr>
                 <tr>
                     <td>Discount code</td>
-                    <td><%=customer.getDoscount_code()%></td>
+                    <td><%=customer.getDiscountCode()%></td>
                 </tr>
                 <tr>
                     <td>ZIP</td>
@@ -42,7 +43,7 @@
                 </tr>
                 <tr>
                     <td>Address</td>
-                    <td><%=customer.getAddressline1()%><%=customer.getAddressline2()%><br></td>
+                    <td><%=customer.getAddressline1()%> <%=customer.getAddressline2()%><br></td>
                 </tr>
                 <tr>
                     <td>City</td>
