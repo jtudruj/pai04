@@ -22,8 +22,8 @@
         <%
             try {
                 List<Customer> list = Customers.getCustomers();
-                pageContext.setAttribute("list", list);
             } catch(Exception e) {
+                out.print("Error!!!!");
                 out.print(e);
             }
         %>

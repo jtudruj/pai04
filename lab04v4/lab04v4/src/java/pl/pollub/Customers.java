@@ -14,12 +14,28 @@ import org.hibernate.SessionFactory;
  * @author linuxlite
  */
 public class Customers {
-    public static List<Customer> getCustomers() {
+    private static Session getSession() {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session session = sf.openSession();
+        return session;
+    }
+ 
+    public static List<Customer> getCustomers() {
+        Session session = getSession();
         List<Customer> customers = (List<Customer>)session.createQuery("from Customer").list();
         session.close();
         return customers;
     }
     
+    public static Customer getCustomer(long id) {
+        Session session = getSession();
+        Customer customer = (Customer)session.get(Customer.class, id);
+        return customer;
+    }
+    
+    public static void insertCustomer(Customer c) {
+        Session session = getSession();
+        session.save(c);
+        session.close();
+    }
 }
